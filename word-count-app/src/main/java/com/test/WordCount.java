@@ -1,6 +1,7 @@
 package com.test;
 
 import java.util.Arrays;
+import java.util.UUID;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -19,20 +20,25 @@ public class WordCount {
 		
 		LOGGER.info("****** Creating Spark Context ...");
 		// Create Spark Context
-		SparkConf sparkConf = new SparkConf().setMaster("local").setAppName("Word Counter");
+		
+		// Runs a local cluster and connects to it
+//		SparkConf sparkConf = new SparkConf().setMaster("local").setAppName("Word Counter");
+		
+		// Connect to an existing spark cluster
+		SparkConf sparkConf = new SparkConf().setMaster("spark://192.168.1.33:7077").setAppName("Word Counter");
 		JavaSparkContext sparkContext = new JavaSparkContext(sparkConf);
 		
 		LOGGER.info("****** Reading input file ...");
 		// Create an RDD
 		JavaRDD<String> inputFile = sparkContext.textFile(fileName);
-		
+				
 		LOGGER.info("****** Extracting words from file ...");
 		JavaRDD<String> wordsFromFile = inputFile.flatMap(content -> Arrays.asList(content.split(" ")).iterator());
 		
 		LOGGER.info("****** Counting word occurrences ...");
 		JavaPairRDD countData = wordsFromFile.mapToPair(t -> new Tuple2(t,1)).reduceByKey((x, y) -> (int) x + (int) y);
 		
-		countData.saveAsTextFile("output");
+		countData.saveAsTextFile("D:\\Learning\\Spark\\output" + UUID.randomUUID().toString());
 	}
 	
 	public static void main(String[] args) {
