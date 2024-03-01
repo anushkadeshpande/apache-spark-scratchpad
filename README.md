@@ -5,8 +5,10 @@
   https://spark.apache.org/downloads.html
 2. Winutils
   https://github.com/steveloughran/winutils/blob/master/hadoop-3.0.0/bin/winutils.exe
-3. Apache Maven
-4. Scala IDE
+3. Hadoop dll
+   https://github.com/steveloughran/winutils/blob/master/hadoop-3.0.0/bin/hadoop.dll
+4. Apache Maven
+5. Scala IDE
   https://scala-ide.org/download/sdk.html
 
 Start Spark Master:
