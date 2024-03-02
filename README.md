@@ -14,6 +14,10 @@ Apache Spark is a unified computing engine and set of libraries for parallel dat
 ⭐ Hadoop replicates data to handle failure whereas Spark uses DAG (Directed Acyclic Graph) to provide fault tolerance
 
 
+## Architecture:
+![image](https://github.com/anushkadeshpande/apache-spark-scratchpad/assets/53345232/4b1710a2-9ddd-49e7-ace3-d0bf517c6c95)
+
+
 ### Setup:
 1. Apache Spark: <br>
    https://spark.apache.org/downloads.html
