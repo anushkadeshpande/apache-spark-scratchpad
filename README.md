@@ -1,4 +1,7 @@
-# apache-spark-scratchpad
+# Apache Spark
+Apache Spark is a unified computing engine and set of libraries for parallel data processing on a computing cluster.
+
+It is similar to Hadoop map reduce but apache spark performs all computation `in-memory` where as hadoop does it on hard-disk. Hence Spark is 10x faster than Hadoop.
 
 ### Setup:
 1. Apache Spark: <br>
