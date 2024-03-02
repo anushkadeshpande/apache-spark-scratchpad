@@ -1,7 +1,18 @@
 # Apache Spark
 Apache Spark is a unified computing engine and set of libraries for parallel data processing on a computing cluster.
 
-It is similar to Hadoop map reduce but apache spark performs all computation `in-memory` where as hadoop does it on hard-disk. Hence Spark is 10x faster than Hadoop.
+
+## Hadoop vs Spark:
+⭐ Hadoop is slower than Spark
+> This is because Hadoop writes data to disk and reads it back from the disk whereas Spark keeps the data in-memory and performs all operations in-memory
+
+⭐ Hadoop is built for batch processing whereas Spark is built for batch as well as streaming processing
+
+⭐ Hadoop is more secure than Spark
+> Hadoop uses Kerberos Authentication and ACL Authorization (via YARN) whereas Spark does not have any security mechanism on its own, but all these features are added if HDFS and YARN are used along with spark
+
+⭐ Hadoop replicates data to handle failure whereas Spark uses DAG (Directed Acyclic Graph) to provide fault tolerance
+
 
 ### Setup:
 1. Apache Spark: <br>
